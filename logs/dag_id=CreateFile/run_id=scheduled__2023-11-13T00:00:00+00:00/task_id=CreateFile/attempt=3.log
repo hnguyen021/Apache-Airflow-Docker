@@ -1,0 +1,31 @@
+[2023-11-14T07:38:32.953+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: CreateFile.CreateFile scheduled__2023-11-13T00:00:00+00:00 [queued]>
+[2023-11-14T07:38:33.045+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: CreateFile.CreateFile scheduled__2023-11-13T00:00:00+00:00 [queued]>
+[2023-11-14T07:38:33.045+0000] {taskinstance.py:1361} INFO - Starting attempt 3 of 3
+[2023-11-14T07:38:33.065+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): CreateFile> on 2023-11-13 00:00:00+00:00
+[2023-11-14T07:38:33.075+0000] {standard_task_runner.py:57} INFO - Started process 25354 to run task
+[2023-11-14T07:38:33.137+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'CreateFile', 'CreateFile', 'scheduled__2023-11-13T00:00:00+00:00', '--job-id', '234', '--raw', '--subdir', 'DAGS_FOLDER/test.py', '--cfg-path', '/tmp/tmpjmqvgci8']
+[2023-11-14T07:38:33.171+0000] {standard_task_runner.py:85} INFO - Job 234: Subtask CreateFile
+[2023-11-14T07:38:34.167+0000] {task_command.py:416} INFO - Running <TaskInstance: CreateFile.CreateFile scheduled__2023-11-13T00:00:00+00:00 [running]> on host 502cd78af35e
+[2023-11-14T07:38:34.806+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='nguyenthung' AIRFLOW_CTX_DAG_ID='CreateFile' AIRFLOW_CTX_TASK_ID='CreateFile' AIRFLOW_CTX_EXECUTION_DATE='2023-11-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-13T00:00:00+00:00'
+[2023-11-14T07:38:34.808+0000] {logging_mixin.py:151} INFO - Current Working Directory: /opt/***
+[2023-11-14T07:38:34.808+0000] {logging_mixin.py:151} INFO - User Running Process: default
+[2023-11-14T07:38:34.808+0000] {logging_mixin.py:151} INFO - Environment Variables: environ({'DUMB_INIT_SETSID': '1', 'HOSTNAME': '502cd78af35e', 'PYTHON_VERSION': '3.8.18', 'LANGUAGE': 'C.UTF-8', 'AIRFLOW_USER_HOME_DIR': '/home/***', 'ADDITIONAL_RUNTIME_APT_DEPS': '', 'PWD': '/opt/***', 'AIRFLOW_VERSION': '2.7.2', 'AIRFLOW__CORE__LOAD_EXAMPLES': 'false', 'AIRFLOW__API__AUTH_BACKENDS': '***.api.auth.backend.basic_auth,***.api.auth.backend.session', 'INSTALL_MSSQL_CLIENT': 'true', 'PYTHON_SETUPTOOLS_VERSION': '57.5.0', 'GUNICORN_CMD_ARGS': '--worker-tmp-dir /dev/shm', 'LD_PRELOAD': '/usr/lib/x86_64-linux-gnu/libstdc++.so.6', 'HOME': '/home/***', 'LANG': 'C.UTF-8', 'AIRFLOW_HOME': '/opt/***', 'GPG_KEY': 'E3FF2839C048B25C084DEBE9B26995E310250568', 'AIRFLOW__DATABASE__SQL_ALCHEMY_CONN': 'postgresql+psycopg2://***:***@postgres/***', 'AIRFLOW__CORE__EXECUTOR': 'LocalExecutor', 'COMMIT_SHA': 'c8b25cb3eea2bcdf951ed7c1d7d0a1f9f04db206', 'AIRFLOW_PIP_VERSION': '23.2.1', 'AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION': 'true', 'ADDITIONAL_RUNTIME_APT_COMMAND': '', '_PIP_ADDITIONAL_REQUIREMENTS': '', 'INSTALL_POSTGRES_CLIENT': 'true', 'SHLVL': '0', 'LC_MESSAGES': 'C.UTF-8', 'RUNTIME_APT_DEPS': '', 'PYTHON_PIP_VERSION': '23.0.1', 'RUNTIME_APT_COMMAND': 'echo', 'LD_LIBRARY_PATH': '/usr/local/lib', 'LC_CTYPE': 'C.UTF-8', 'AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK': 'true', 'PYTHON_GET_PIP_SHA256': '45a2bb8bf2bb5eff16fdd00faef6f29731831c7c59bd9fc2bf1f3bed511ff1fe', 'AIRFLOW__CORE__SQL_ALCHEMY_CONN': 'postgresql+psycopg2://***:***@postgres/***', 'AIRFLOW_INSTALLATION_METHOD': '', 'LC_ALL': 'C.UTF-8', 'PYTHON_GET_PIP_URL': 'https://github.com/pypa/get-pip/raw/9af82b715db434abb94a0a6f3569f43e72157346/public/get-pip.py', 'INSTALL_MYSQL_CLIENT': 'true', 'PATH': '/root/bin:/home/***/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'PYTHON_BASE_IMAGE': 'python:3.8-slim-bullseye', 'AIRFLOW_UID': '50000', 'BUILD_ID': '', 'AIRFLOW__CORE__FERNET_KEY': '', 'DEBIAN_FRONTEND': 'noninteractive', '_AIRFLOW_PARSING_CONTEXT_DAG_ID': 'CreateFile', '_AIRFLOW_PARSING_CONTEXT_TASK_ID': 'CreateFile', 'AIRFLOW_CTX_DAG_OWNER': 'nguyenthung', 'AIRFLOW_CTX_DAG_ID': 'CreateFile', 'AIRFLOW_CTX_TASK_ID': 'CreateFile', 'AIRFLOW_CTX_EXECUTION_DATE': '2023-11-13T00:00:00+00:00', 'AIRFLOW_CTX_TRY_NUMBER': '3', 'AIRFLOW_CTX_DAG_RUN_ID': 'scheduled__2023-11-13T00:00:00+00:00'})
+[2023-11-14T07:40:44.601+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/test.py", line 29, in CreateFile
+    conn = psycopg2.connect(
+  File "/home/airflow/.local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "172.18.0.4", port 5432 failed: Connection timed out
+	Is the server running on that host and accepting TCP/IP connections?
+
+[2023-11-14T07:40:44.619+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=CreateFile, task_id=CreateFile, execution_date=20231113T000000, start_date=20231114T073832, end_date=20231114T074044
+[2023-11-14T07:40:44.638+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 234 for task CreateFile (connection to server at "172.18.0.4", port 5432 failed: Connection timed out
+	Is the server running on that host and accepting TCP/IP connections?
+; 25354)
+[2023-11-14T07:40:44.690+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-14T07:40:44.706+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

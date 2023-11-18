@@ -1,0 +1,55 @@
+[2023-11-16T13:50:22.048+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: miai_dag.crawl_data manual__2023-11-16T13:50:14.706489+00:00 [queued]>
+[2023-11-16T13:50:22.067+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: miai_dag.crawl_data manual__2023-11-16T13:50:14.706489+00:00 [queued]>
+[2023-11-16T13:50:22.067+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-16T13:50:22.093+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): crawl_data> on 2023-11-16 13:50:14.706489+00:00
+[2023-11-16T13:50:22.109+0000] {standard_task_runner.py:57} INFO - Started process 29774 to run task
+[2023-11-16T13:50:22.131+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'miai_dag', 'crawl_data', 'manual__2023-11-16T13:50:14.706489+00:00', '--job-id', '820', '--raw', '--subdir', 'DAGS_FOLDER/dag-lstm.py', '--cfg-path', '/tmp/tmp33hkk7m_']
+[2023-11-16T13:50:22.136+0000] {standard_task_runner.py:85} INFO - Job 820: Subtask crawl_data
+[2023-11-16T13:50:22.214+0000] {task_command.py:416} INFO - Running <TaskInstance: miai_dag.crawl_data manual__2023-11-16T13:50:14.706489+00:00 [running]> on host 4c85f18ab3d7
+[2023-11-16T13:50:22.359+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='nguyenthung' AIRFLOW_CTX_DAG_ID='miai_dag' AIRFLOW_CTX_TASK_ID='crawl_data' AIRFLOW_CTX_EXECUTION_DATE='2023-11-16T13:50:14.706489+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-16T13:50:14.706489+00:00'
+[2023-11-16T13:50:22.363+0000] {logging_mixin.py:151} INFO - Current Working Directory: /opt/***
+[2023-11-16T13:50:22.365+0000] {logging_mixin.py:151} INFO - User Running Process: default
+[2023-11-16T13:50:22.365+0000] {logging_mixin.py:151} INFO - Environment Variables: environ({'DUMB_INIT_SETSID': '1', 'HOSTNAME': '4c85f18ab3d7', 'PYTHON_VERSION': '3.8.18', 'LANGUAGE': 'C.UTF-8', 'JAVA_HOME': '/usr/lib/jvm/java-11-openjdk-amd64', 'AIRFLOW_USER_HOME_DIR': '/home/***', 'ADDITIONAL_RUNTIME_APT_DEPS': '', 'PWD': '/opt/***', 'AIRFLOW_VERSION': '2.7.2', 'AIRFLOW__CORE__LOAD_EXAMPLES': 'false', 'AIRFLOW__API__AUTH_BACKENDS': '***.api.auth.backend.basic_auth,***.api.auth.backend.session', 'INSTALL_MSSQL_CLIENT': 'true', 'PYTHON_SETUPTOOLS_VERSION': '57.5.0', 'GUNICORN_CMD_ARGS': '--worker-tmp-dir /dev/shm', 'LD_PRELOAD': '/usr/lib/x86_64-linux-gnu/libstdc++.so.6', 'HOME': '/home/***', 'LANG': 'C.UTF-8', 'AIRFLOW_HOME': '/opt/***', 'GPG_KEY': 'E3FF2839C048B25C084DEBE9B26995E310250568', 'AIRFLOW__DATABASE__SQL_ALCHEMY_CONN': 'postgresql+psycopg2://***:***@postgres/***', 'AIRFLOW__CORE__EXECUTOR': 'LocalExecutor', 'COMMIT_SHA': 'c8b25cb3eea2bcdf951ed7c1d7d0a1f9f04db206', 'AIRFLOW_PIP_VERSION': '23.2.1', 'AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION': 'true', 'ADDITIONAL_RUNTIME_APT_COMMAND': '', '_PIP_ADDITIONAL_REQUIREMENTS': '', 'INSTALL_POSTGRES_CLIENT': 'true', 'SHLVL': '0', 'LC_MESSAGES': 'C.UTF-8', 'RUNTIME_APT_DEPS': '', 'PYTHON_PIP_VERSION': '23.0.1', 'RUNTIME_APT_COMMAND': 'echo', 'LD_LIBRARY_PATH': '/usr/local/lib', 'LC_CTYPE': 'C.UTF-8', 'AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK': 'true', 'PYTHON_GET_PIP_SHA256': '45a2bb8bf2bb5eff16fdd00faef6f29731831c7c59bd9fc2bf1f3bed511ff1fe', 'AIRFLOW__CORE__SQL_ALCHEMY_CONN': 'postgresql+psycopg2://***:***@postgres/***', 'AIRFLOW_INSTALLATION_METHOD': '', 'LC_ALL': 'C.UTF-8', 'PYTHON_GET_PIP_URL': 'https://github.com/pypa/get-pip/raw/9af82b715db434abb94a0a6f3569f43e72157346/public/get-pip.py', 'INSTALL_MYSQL_CLIENT': 'true', 'PATH': '/root/bin:/home/***/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'PYTHON_BASE_IMAGE': 'python:3.8-slim-bullseye', 'AIRFLOW_UID': '50000', 'BUILD_ID': '', 'AIRFLOW__CORE__FERNET_KEY': '', 'DEBIAN_FRONTEND': 'noninteractive', 'TF2_BEHAVIOR': '1', '_AIRFLOW_PARSING_CONTEXT_DAG_ID': 'miai_dag', '_AIRFLOW_PARSING_CONTEXT_TASK_ID': 'crawl_data', 'AIRFLOW_CTX_DAG_OWNER': 'nguyenthung', 'AIRFLOW_CTX_DAG_ID': 'miai_dag', 'AIRFLOW_CTX_TASK_ID': 'crawl_data', 'AIRFLOW_CTX_EXECUTION_DATE': '2023-11-16T13:50:14.706489+00:00', 'AIRFLOW_CTX_TRY_NUMBER': '1', 'AIRFLOW_CTX_DAG_RUN_ID': 'manual__2023-11-16T13:50:14.706489+00:00'})
+[2023-11-16T13:50:22.375+0000] {logging_mixin.py:151} INFO - https://finfo-api.vndirect.com.vn/v4/stock_prices?sort=date&q=code:DIG~date:gte:2000-01-01~date:lte:2023-11-16&size=9990&page=1
+[2023-11-16T13:50:28.060+0000] {logging_mixin.py:151} INFO -   code        date      time floor  ...       ptValue  change  adChange  pctChange
+0  DIG  2023-11-16  15:11:01  HOSE  ...  7.686000e+09    1.25      1.25     5.0302
+1  DIG  2023-11-15  15:11:01  HOSE  ...  0.000000e+00    0.10      0.10     0.4040
+2  DIG  2023-11-14  15:11:02  HOSE  ...  0.000000e+00   -0.25     -0.25    -1.0000
+3  DIG  2023-11-13  15:11:01  HOSE  ...  1.121000e+10    0.60      0.60     2.4590
+4  DIG  2023-11-10  15:11:02  HOSE  ...  0.000000e+00   -0.10     -0.10    -0.4082
+
+[5 rows x 25 columns]
+[2023-11-16T13:50:28.060+0000] {logging_mixin.py:151} INFO - Header của DataFrame:
+[2023-11-16T13:50:28.061+0000] {logging_mixin.py:151} INFO - ['code', 'date', 'time', 'floor', 'type', 'basicPrice', 'ceilingPrice', 'floorPrice', 'open', 'high', 'low', 'close', 'average', 'adOpen', 'adHigh', 'adLow', 'adClose', 'adAverage', 'nmVolume', 'nmValue', 'ptVolume', 'ptValue', 'change', 'adChange', 'pctChange']
+[2023-11-16T13:50:28.061+0000] {logging_mixin.py:151} INFO - 
+Kiểu dữ liệu của các cột trong DataFrame:
+[2023-11-16T13:50:28.063+0000] {logging_mixin.py:151} INFO - code             object
+date             object
+time             object
+floor            object
+type             object
+basicPrice      float64
+ceilingPrice    float64
+floorPrice      float64
+open            float64
+high            float64
+low             float64
+close           float64
+average         float64
+adOpen          float64
+adHigh          float64
+adLow           float64
+adClose         float64
+adAverage       float64
+nmVolume        float64
+nmValue         float64
+ptVolume        float64
+ptValue         float64
+change          float64
+adChange        float64
+pctChange       float64
+dtype: object
+[2023-11-16T13:50:28.204+0000] {python.py:194} INFO - Done. Returned value was: True
+[2023-11-16T13:50:28.264+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=miai_dag, task_id=crawl_data, execution_date=20231116T135014, start_date=20231116T135022, end_date=20231116T135028
+[2023-11-16T13:50:28.355+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-16T13:50:28.388+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

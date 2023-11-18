@@ -1,0 +1,37 @@
+[2023-11-17T07:30:46.755+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_procesing.transform_phase manual__2023-11-17T07:30:22.338752+00:00 [queued]>
+[2023-11-17T07:30:46.765+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_procesing.transform_phase manual__2023-11-17T07:30:22.338752+00:00 [queued]>
+[2023-11-17T07:30:46.765+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-17T07:30:46.777+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): transform_phase> on 2023-11-17 07:30:22.338752+00:00
+[2023-11-17T07:30:46.787+0000] {standard_task_runner.py:57} INFO - Started process 53779 to run task
+[2023-11-17T07:30:46.791+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_procesing', 'transform_phase', 'manual__2023-11-17T07:30:22.338752+00:00', '--job-id', '919', '--raw', '--subdir', 'DAGS_FOLDER/dag-lstm.py', '--cfg-path', '/tmp/tmp53qrwcqc']
+[2023-11-17T07:30:46.796+0000] {standard_task_runner.py:85} INFO - Job 919: Subtask transform_phase
+[2023-11-17T07:30:46.849+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_procesing.transform_phase manual__2023-11-17T07:30:22.338752+00:00 [running]> on host 4c85f18ab3d7
+[2023-11-17T07:30:46.944+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='nguyenthung' AIRFLOW_CTX_DAG_ID='etl_procesing' AIRFLOW_CTX_TASK_ID='transform_phase' AIRFLOW_CTX_EXECUTION_DATE='2023-11-17T07:30:22.338752+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-17T07:30:22.338752+00:00'
+[2023-11-17T07:30:46.964+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 3652, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 147, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 176, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'ceilingprice'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag-lstm.py", line 87, in transform
+    df['price_diff'] = df['ceilingprice'] - df['floorprice']
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/frame.py", line 3761, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/indexes/base.py", line 3654, in get_loc
+    raise KeyError(key) from err
+KeyError: 'ceilingprice'
+[2023-11-17T07:30:47.036+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=etl_procesing, task_id=transform_phase, execution_date=20231117T073022, start_date=20231117T073046, end_date=20231117T073047
+[2023-11-17T07:30:47.049+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 919 for task transform_phase ('ceilingprice'; 53779)
+[2023-11-17T07:30:47.085+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-17T07:30:47.123+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

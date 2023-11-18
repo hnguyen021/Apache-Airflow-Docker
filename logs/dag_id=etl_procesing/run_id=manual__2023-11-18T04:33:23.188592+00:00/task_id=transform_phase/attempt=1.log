@@ -1,0 +1,93 @@
+[2023-11-18T04:33:35.284+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_procesing.transform_phase manual__2023-11-18T04:33:23.188592+00:00 [queued]>
+[2023-11-18T04:33:35.294+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_procesing.transform_phase manual__2023-11-18T04:33:23.188592+00:00 [queued]>
+[2023-11-18T04:33:35.294+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-18T04:33:35.307+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): transform_phase> on 2023-11-18 04:33:23.188592+00:00
+[2023-11-18T04:33:35.318+0000] {standard_task_runner.py:57} INFO - Started process 13131 to run task
+[2023-11-18T04:33:35.322+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_procesing', 'transform_phase', 'manual__2023-11-18T04:33:23.188592+00:00', '--job-id', '956', '--raw', '--subdir', 'DAGS_FOLDER/dag-lstm.py', '--cfg-path', '/tmp/tmp0fpd99zq']
+[2023-11-18T04:33:35.326+0000] {standard_task_runner.py:85} INFO - Job 956: Subtask transform_phase
+[2023-11-18T04:33:35.381+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_procesing.transform_phase manual__2023-11-18T04:33:23.188592+00:00 [running]> on host 4c85f18ab3d7
+[2023-11-18T04:33:35.475+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='nguyenthung' AIRFLOW_CTX_DAG_ID='etl_procesing' AIRFLOW_CTX_TASK_ID='transform_phase' AIRFLOW_CTX_EXECUTION_DATE='2023-11-18T04:33:23.188592+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-18T04:33:23.188592+00:00'
+[2023-11-18T04:33:35.497+0000] {logging_mixin.py:151} INFO - code             object
+date             object
+time             object
+floor            object
+type             object
+basicPrice      float64
+ceilingPrice    float64
+floorPrice      float64
+open            float64
+high            float64
+low             float64
+close           float64
+average         float64
+adOpen          float64
+adHigh          float64
+adLow           float64
+adClose         float64
+adAverage       float64
+nmVolume        float64
+nmValue         float64
+ptVolume        float64
+ptValue         float64
+change          float64
+adChange        float64
+pctChange       float64
+priceDiff       float64
+dtype: object
+[2023-11-18T04:33:35.556+0000] {logging_mixin.py:151} INFO -    code        date      time floor  ... change  adChange  pctChange  priceDiff
+0   DIG  2023-11-17  15:11:01  HOSE  ...  -0.50     -0.50    -1.9157        3.6
+1   DIG  2023-11-16  15:11:01  HOSE  ...   1.25      1.25     5.0302        3.4
+2   DIG  2023-11-15  15:11:01  HOSE  ...   0.10      0.10     0.4040        3.4
+3   DIG  2023-11-14  15:11:02  HOSE  ...  -0.25     -0.25    -1.0000        3.5
+4   DIG  2023-11-13  15:11:01  HOSE  ...   0.60      0.60     2.4590        3.4
+5   DIG  2023-11-10  15:11:02  HOSE  ...  -0.10     -0.10    -0.4082        3.4
+6   DIG  2023-11-09  15:11:02  HOSE  ...   0.60      0.60     2.5105        3.3
+7   DIG  2023-11-08  15:11:01  HOSE  ...   1.55      1.55     6.9351        3.1
+8   DIG  2023-11-07  15:11:01  HOSE  ...  -0.45     -0.45    -1.9737        3.1
+9   DIG  2023-11-06  15:11:01  HOSE  ...   0.50      0.50     2.2422        3.1
+10  DIG  2023-11-03  15:11:01  HOSE  ...   0.30      0.30     1.3636        3.0
+11  DIG  2023-11-02  15:11:02  HOSE  ...   1.40      1.40     6.7961        2.8
+12  DIG  2023-11-01  15:11:02  HOSE  ...   0.40      0.40     1.9802        2.8
+13  DIG  2023-10-31  15:10:02  HOSE  ...  -0.05     -0.05    -0.2469        2.8
+14  DIG  2023-10-30  15:10:01  HOSE  ...  -0.90     -0.90    -4.2553        2.9
+15  DIG  2023-10-27  15:10:02  HOSE  ...   1.35      1.35     6.8182        2.7
+16  DIG  2023-10-26  15:10:02  HOSE  ...  -1.20     -1.20    -5.7143        2.9
+17  DIG  2023-10-25  15:10:02  HOSE  ...  -0.30     -0.30    -1.4085        2.9
+18  DIG  2023-10-24  15:10:02  HOSE  ...   1.25      1.25     6.2344        2.8
+19  DIG  2023-10-23  15:10:02  HOSE  ...  -0.30     -0.30    -1.4742        2.8
+20  DIG  2023-10-20  15:10:06  HOSE  ...   1.30      1.30     6.8241        2.6
+21  DIG  2023-10-19  15:10:02  HOSE  ...  -1.30     -1.30    -6.3882        2.8
+22  DIG  2023-10-18  15:10:02  HOSE  ...  -1.50     -1.50    -6.8650        3.0
+23  DIG  2023-10-17  15:10:02  HOSE  ...  -1.60     -1.60    -6.8230        3.2
+24  DIG  2023-10-16  15:10:02  HOSE  ...  -0.25     -0.25    -1.0549        3.3
+25  DIG  2023-10-13  15:10:02  HOSE  ...  -0.10     -0.10    -0.4202        3.3
+26  DIG  2023-10-12  15:10:02  HOSE  ...   0.40      0.40     1.7094        3.2
+27  DIG  2023-10-11  15:10:02  HOSE  ...   0.45      0.45     1.9608        3.2
+28  DIG  2023-10-10  15:10:02  HOSE  ...  -0.20     -0.20    -0.8639        3.2
+29  DIG  2023-10-09  15:10:02  HOSE  ...   0.85      0.85     3.8117        3.1
+30  DIG  2023-10-06  15:10:01  HOSE  ...   0.50      0.50     2.2936        3.0
+31  DIG  2023-10-05  15:10:01  HOSE  ...  -1.60     -1.60    -6.8376        3.2
+32  DIG  2023-10-04  15:10:01  HOSE  ...   0.05      0.05     0.2141        3.2
+33  DIG  2023-10-03  15:10:02  HOSE  ...  -1.75     -1.75    -6.9721        3.5
+34  DIG  2023-10-02  15:10:01  HOSE  ...   0.00      0.00     0.0000        3.5
+35  DIG  2023-09-29  15:09:01  HOSE  ...   0.60      0.60     2.4490        3.4
+36  DIG  2023-09-28  15:09:01  HOSE  ...  -1.00     -1.00    -3.9216        3.5
+37  DIG  2023-09-27  15:09:01  HOSE  ...   1.00      1.00     4.0816        3.4
+38  DIG  2023-09-26  15:09:01  HOSE  ...   0.65      0.65     2.7254        3.3
+39  DIG  2023-09-25  15:09:01  HOSE  ...  -1.75     -1.75    -6.8359        3.5
+40  DIG  2023-09-22  15:09:01  HOSE  ...  -1.90     -1.90    -6.9091        3.8
+41  DIG  2023-09-21  15:09:01  HOSE  ...  -0.80     -0.80    -2.8269        3.9
+42  DIG  2023-09-20  15:09:02  HOSE  ...   0.90      0.90     3.2847        3.8
+43  DIG  2023-09-19  15:09:01  HOSE  ...   0.60      0.60     2.2388        3.7
+44  DIG  2023-09-18  15:09:02  HOSE  ...  -0.40     -0.40    -1.4706        3.8
+45  DIG  2023-09-15  15:09:03  HOSE  ...  -0.10     -0.10    -0.3663        3.8
+46  DIG  2023-09-14  15:09:03  HOSE  ...  -1.10     -1.10    -3.8732        3.9
+47  DIG  2023-09-13  15:09:02  HOSE  ...  -0.55     -0.55    -1.8998        4.0
+48  DIG  2023-09-12  15:09:02  HOSE  ...   1.15      1.15     4.1367        3.8
+49  DIG  2023-09-11  15:09:02  HOSE  ...  -1.60     -1.60    -5.4422        4.1
+
+[50 rows x 26 columns]
+[2023-11-18T04:33:35.605+0000] {python.py:194} INFO - Done. Returned value was: True
+[2023-11-18T04:33:35.628+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=etl_procesing, task_id=transform_phase, execution_date=20231118T043323, start_date=20231118T043335, end_date=20231118T043335
+[2023-11-18T04:33:35.657+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-18T04:33:35.683+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

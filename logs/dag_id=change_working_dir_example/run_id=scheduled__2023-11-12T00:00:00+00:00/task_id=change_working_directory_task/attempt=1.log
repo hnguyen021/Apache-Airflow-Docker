@@ -1,0 +1,22 @@
+[2023-11-14T08:19:50.853+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: change_working_dir_example.change_working_directory_task scheduled__2023-11-12T00:00:00+00:00 [queued]>
+[2023-11-14T08:19:50.881+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: change_working_dir_example.change_working_directory_task scheduled__2023-11-12T00:00:00+00:00 [queued]>
+[2023-11-14T08:19:50.881+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-14T08:19:50.907+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): change_working_directory_task> on 2023-11-12 00:00:00+00:00
+[2023-11-14T08:19:50.914+0000] {standard_task_runner.py:57} INFO - Started process 31693 to run task
+[2023-11-14T08:19:50.923+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'change_working_dir_example', 'change_working_directory_task', 'scheduled__2023-11-12T00:00:00+00:00', '--job-id', '240', '--raw', '--subdir', 'DAGS_FOLDER/working-directory.py', '--cfg-path', '/tmp/tmplfmtftdo']
+[2023-11-14T08:19:50.926+0000] {standard_task_runner.py:85} INFO - Job 240: Subtask change_working_directory_task
+[2023-11-14T08:19:51.072+0000] {task_command.py:416} INFO - Running <TaskInstance: change_working_dir_example.change_working_directory_task scheduled__2023-11-12T00:00:00+00:00 [running]> on host 502cd78af35e
+[2023-11-14T08:19:51.232+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='nguyenthung' AIRFLOW_CTX_DAG_ID='change_working_dir_example' AIRFLOW_CTX_TASK_ID='change_working_directory_task' AIRFLOW_CTX_EXECUTION_DATE='2023-11-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-11-12T00:00:00+00:00'
+[2023-11-14T08:19:51.288+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/working-directory.py", line 10, in change_working_directory
+    os.chdir(new_directory)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/nguyenthung/Desktop/Docker-Airflow'
+[2023-11-14T08:19:51.313+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=change_working_dir_example, task_id=change_working_directory_task, execution_date=20231112T000000, start_date=20231114T081950, end_date=20231114T081951
+[2023-11-14T08:19:51.334+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 240 for task change_working_directory_task ([Errno 2] No such file or directory: '/home/nguyenthung/Desktop/Docker-Airflow'; 31693)
+[2023-11-14T08:19:51.386+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-14T08:19:51.425+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

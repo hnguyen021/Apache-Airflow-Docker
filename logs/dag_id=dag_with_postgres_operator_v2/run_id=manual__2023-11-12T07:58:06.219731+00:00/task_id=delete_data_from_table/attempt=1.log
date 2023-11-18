@@ -1,0 +1,21 @@
+[2023-11-12T08:02:14.362+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dag_with_postgres_operator_v2.delete_data_from_table manual__2023-11-12T07:58:06.219731+00:00 [queued]>
+[2023-11-12T08:02:14.395+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dag_with_postgres_operator_v2.delete_data_from_table manual__2023-11-12T07:58:06.219731+00:00 [queued]>
+[2023-11-12T08:02:14.395+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 6
+[2023-11-12T08:02:14.502+0000] {taskinstance.py:1382} INFO - Executing <Task(PostgresOperator): delete_data_from_table> on 2023-11-12 07:58:06.219731+00:00
+[2023-11-12T08:02:14.533+0000] {standard_task_runner.py:57} INFO - Started process 9274 to run task
+[2023-11-12T08:02:14.576+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dag_with_postgres_operator_v2', 'delete_data_from_table', 'manual__2023-11-12T07:58:06.219731+00:00', '--job-id', '89', '--raw', '--subdir', 'DAGS_FOLDER/dag-posgres-operator.py', '--cfg-path', '/tmp/tmpo0dwjjnl']
+[2023-11-12T08:02:14.602+0000] {standard_task_runner.py:85} INFO - Job 89: Subtask delete_data_from_table
+[2023-11-12T08:02:14.785+0000] {task_command.py:416} INFO - Running <TaskInstance: dag_with_postgres_operator_v2.delete_data_from_table manual__2023-11-12T07:58:06.219731+00:00 [running]> on host aac4306c1949
+[2023-11-12T08:02:15.131+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='nguyenthung' AIRFLOW_CTX_DAG_ID='dag_with_postgres_operator_v2' AIRFLOW_CTX_TASK_ID='delete_data_from_table' AIRFLOW_CTX_EXECUTION_DATE='2023-11-12T07:58:06.219731+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-12T07:58:06.219731+00:00'
+[2023-11-12T08:02:15.132+0000] {sql.py:274} INFO - Executing: 
+            delete from dag_runs where dt = '2023-11-12' and dag_id = 'dag_with_postgres_operator_v2';
+        
+[2023-11-12T08:02:15.181+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-11-12T08:02:15.213+0000] {base.py:73} INFO - Using connection ID 'postgres_localhost' for task execution.
+[2023-11-12T08:02:15.239+0000] {sql.py:418} INFO - Running statement: 
+            delete from dag_runs where dt = '2023-11-12' and dag_id = 'dag_with_postgres_operator_v2';
+        , parameters: None
+[2023-11-12T08:02:15.247+0000] {sql.py:427} INFO - Rows affected: 1
+[2023-11-12T08:02:15.315+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=dag_with_postgres_operator_v2, task_id=delete_data_from_table, execution_date=20231112T075806, start_date=20231112T080214, end_date=20231112T080215
+[2023-11-12T08:02:15.362+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-12T08:02:15.438+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

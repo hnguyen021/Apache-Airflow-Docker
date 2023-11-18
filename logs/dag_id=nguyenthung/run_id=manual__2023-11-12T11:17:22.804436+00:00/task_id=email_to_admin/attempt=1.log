@@ -1,0 +1,14 @@
+[2023-11-12T11:18:31.352+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: nguyenthung.email_to_admin manual__2023-11-12T11:17:22.804436+00:00 [queued]>
+[2023-11-12T11:18:31.395+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: nguyenthung.email_to_admin manual__2023-11-12T11:17:22.804436+00:00 [queued]>
+[2023-11-12T11:18:31.396+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-12T11:18:31.443+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): email_to_admin> on 2023-11-12 11:17:22.804436+00:00
+[2023-11-12T11:18:31.456+0000] {standard_task_runner.py:57} INFO - Started process 19744 to run task
+[2023-11-12T11:18:31.470+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'nguyenthung', 'email_to_admin', 'manual__2023-11-12T11:17:22.804436+00:00', '--job-id', '123', '--raw', '--subdir', 'DAGS_FOLDER/dag-elt-example.py', '--cfg-path', '/tmp/tmpdnq9b30o']
+[2023-11-12T11:18:31.489+0000] {standard_task_runner.py:85} INFO - Job 123: Subtask email_to_admin
+[2023-11-12T11:18:31.651+0000] {task_command.py:416} INFO - Running <TaskInstance: nguyenthung.email_to_admin manual__2023-11-12T11:17:22.804436+00:00 [running]> on host 502cd78af35e
+[2023-11-12T11:18:32.091+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='nguyenthung' AIRFLOW_CTX_DAG_ID='nguyenthung' AIRFLOW_CTX_TASK_ID='email_to_admin' AIRFLOW_CTX_EXECUTION_DATE='2023-11-12T11:17:22.804436+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-12T11:17:22.804436+00:00'
+[2023-11-12T11:18:41.583+0000] {logging_mixin.py:151} INFO - Error sending email: (552, b"5.3.4 Your message exceeded Google's message size limits. Please visit\n5.3.4  https://support.google.com/mail/?p=MaxSizeError to view our size\n5.3.4 guidelines. a11-20020a170902900b00b001c61921d4d2sm2430309plp.302 - gsmtp", 'nguyent.hung.pntv9@gmail.com')
+[2023-11-12T11:18:41.600+0000] {python.py:194} INFO - Done. Returned value was: True
+[2023-11-12T11:18:41.629+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=nguyenthung, task_id=email_to_admin, execution_date=20231112T111722, start_date=20231112T111831, end_date=20231112T111841
+[2023-11-12T11:18:41.688+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-11-12T11:18:41.706+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

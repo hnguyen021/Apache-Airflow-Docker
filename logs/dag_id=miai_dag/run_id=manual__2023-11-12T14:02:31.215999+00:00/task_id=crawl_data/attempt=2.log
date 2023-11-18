@@ -1,0 +1,33 @@
+[2023-11-12T14:07:50.800+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: miai_dag.crawl_data manual__2023-11-12T14:02:31.215999+00:00 [queued]>
+[2023-11-12T14:07:50.809+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: miai_dag.crawl_data manual__2023-11-12T14:02:31.215999+00:00 [queued]>
+[2023-11-12T14:07:50.809+0000] {taskinstance.py:1361} INFO - Starting attempt 2 of 2
+[2023-11-12T14:07:50.824+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): crawl_data> on 2023-11-12 14:02:31.215999+00:00
+[2023-11-12T14:07:50.835+0000] {standard_task_runner.py:57} INFO - Started process 44319 to run task
+[2023-11-12T14:07:50.839+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'miai_dag', 'crawl_data', 'manual__2023-11-12T14:02:31.215999+00:00', '--job-id', '156', '--raw', '--subdir', 'DAGS_FOLDER/dag-lstm.py', '--cfg-path', '/tmp/tmphxu2axyt']
+[2023-11-12T14:07:50.843+0000] {standard_task_runner.py:85} INFO - Job 156: Subtask crawl_data
+[2023-11-12T14:07:50.904+0000] {task_command.py:416} INFO - Running <TaskInstance: miai_dag.crawl_data manual__2023-11-12T14:02:31.215999+00:00 [running]> on host 502cd78af35e
+[2023-11-12T14:07:51.016+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='nguyenthung' AIRFLOW_CTX_DAG_ID='miai_dag' AIRFLOW_CTX_TASK_ID='crawl_data' AIRFLOW_CTX_EXECUTION_DATE='2023-11-12T14:02:31.215999+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-12T14:02:31.215999+00:00'
+[2023-11-12T14:07:51.023+0000] {logging_mixin.py:151} INFO - https://finfo-api.vndirect.com.vn/v4/stock_prices?sort=date&q=code:DIG~date:gte:2000-01-01~date:lte:2023-11-12&size=9990&page=1
+[2023-11-12T14:07:54.319+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag-lstm.py", line 54, in craw_stock_price
+    stock_price_df.to_csv("home/nguyenthung/Desktop/Docker-Airflow/data/stock_price.csv", index=None)
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/core/generic.py", line 3772, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/formats/format.py", line 1186, in to_csv
+    csv_formatter.save()
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/formats/csvs.py", line 240, in save
+    with get_handle(
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/common.py", line 737, in get_handle
+    check_parent_directory(str(handle))
+  File "/home/airflow/.local/lib/python3.8/site-packages/pandas/io/common.py", line 600, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'home/nguyenthung/Desktop/Docker-Airflow/data'
+[2023-11-12T14:07:54.339+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=miai_dag, task_id=crawl_data, execution_date=20231112T140231, start_date=20231112T140750, end_date=20231112T140754
+[2023-11-12T14:07:54.356+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 156 for task crawl_data (Cannot save file into a non-existent directory: 'home/nguyenthung/Desktop/Docker-Airflow/data'; 44319)
+[2023-11-12T14:07:54.410+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-12T14:07:54.436+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

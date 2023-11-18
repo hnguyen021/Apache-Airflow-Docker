@@ -1,0 +1,4 @@
+[2023-11-14T03:05:58.026+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: miai_dag.crawl_data manual__2023-11-13T12:23:39.096131+00:00 [queued]>
+[2023-11-14T03:05:58.041+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: miai_dag.crawl_data manual__2023-11-13T12:23:39.096131+00:00 [queued]>
+[2023-11-14T03:05:58.041+0000] {taskinstance.py:1361} INFO - Starting attempt 3 of 3
+[2023-11-14T03:05:58.108+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): crawl_data> on 2023-11-13 12:23:39.096131+00:00

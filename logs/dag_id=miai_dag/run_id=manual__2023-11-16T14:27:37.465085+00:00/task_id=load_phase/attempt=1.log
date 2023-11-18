@@ -1,0 +1,22 @@
+[2023-11-16T14:27:59.350+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: miai_dag.load_phase manual__2023-11-16T14:27:37.465085+00:00 [queued]>
+[2023-11-16T14:27:59.359+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: miai_dag.load_phase manual__2023-11-16T14:27:37.465085+00:00 [queued]>
+[2023-11-16T14:27:59.360+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2023-11-16T14:27:59.375+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): load_phase> on 2023-11-16 14:27:37.465085+00:00
+[2023-11-16T14:27:59.387+0000] {standard_task_runner.py:57} INFO - Started process 36426 to run task
+[2023-11-16T14:27:59.392+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'miai_dag', 'load_phase', 'manual__2023-11-16T14:27:37.465085+00:00', '--job-id', '833', '--raw', '--subdir', 'DAGS_FOLDER/dag-lstm.py', '--cfg-path', '/tmp/tmpfi6gqwxd']
+[2023-11-16T14:27:59.396+0000] {standard_task_runner.py:85} INFO - Job 833: Subtask load_phase
+[2023-11-16T14:27:59.452+0000] {task_command.py:416} INFO - Running <TaskInstance: miai_dag.load_phase manual__2023-11-16T14:27:37.465085+00:00 [running]> on host 4c85f18ab3d7
+[2023-11-16T14:27:59.561+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='nguyenthung' AIRFLOW_CTX_DAG_ID='miai_dag' AIRFLOW_CTX_TASK_ID='load_phase' AIRFLOW_CTX_EXECUTION_DATE='2023-11-16T14:27:37.465085+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-16T14:27:37.465085+00:00'
+[2023-11-16T14:27:59.569+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag-lstm.py", line 135, in load
+    cur.execute(
+TypeError: not all arguments converted during string formatting
+[2023-11-16T14:27:59.580+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=miai_dag, task_id=load_phase, execution_date=20231116T142737, start_date=20231116T142759, end_date=20231116T142759
+[2023-11-16T14:27:59.592+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 833 for task load_phase (not all arguments converted during string formatting; 36426)
+[2023-11-16T14:27:59.646+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-16T14:27:59.669+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

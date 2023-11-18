@@ -1,0 +1,23 @@
+[2023-11-12T14:06:25.713+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: miai_dag.crawl_data manual__2023-11-12T13:56:00.276954+00:00 [queued]>
+[2023-11-12T14:06:25.731+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: miai_dag.crawl_data manual__2023-11-12T13:56:00.276954+00:00 [queued]>
+[2023-11-12T14:06:25.732+0000] {taskinstance.py:1361} INFO - Starting attempt 3 of 3
+[2023-11-12T14:06:25.772+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): crawl_data> on 2023-11-12 13:56:00.276954+00:00
+[2023-11-12T14:06:25.810+0000] {standard_task_runner.py:57} INFO - Started process 44079 to run task
+[2023-11-12T14:06:25.823+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'miai_dag', 'crawl_data', 'manual__2023-11-12T13:56:00.276954+00:00', '--job-id', '154', '--raw', '--subdir', 'DAGS_FOLDER/dag-lstm.py', '--cfg-path', '/tmp/tmpqp97s6ts']
+[2023-11-12T14:06:25.835+0000] {standard_task_runner.py:85} INFO - Job 154: Subtask crawl_data
+[2023-11-12T14:06:25.932+0000] {task_command.py:416} INFO - Running <TaskInstance: miai_dag.crawl_data manual__2023-11-12T13:56:00.276954+00:00 [running]> on host 502cd78af35e
+[2023-11-12T14:06:26.120+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='nguyenthung' AIRFLOW_CTX_DAG_ID='miai_dag' AIRFLOW_CTX_TASK_ID='crawl_data' AIRFLOW_CTX_EXECUTION_DATE='2023-11-12T13:56:00.276954+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-11-12T13:56:00.276954+00:00'
+[2023-11-12T14:06:26.130+0000] {logging_mixin.py:151} INFO - https://finfo-api.vndirect.com.vn/v4/stock_prices?sort=date&q=code:DIG~date:gte:2000-01-01~date:lte:2023-11-12&size=9990&page=1
+[2023-11-12T14:06:34.408+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag-lstm.py", line 52, in craw_stock_price
+    stock_price_df.head(5)
+NameError: name 'st' is not defined
+[2023-11-12T14:06:34.428+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=miai_dag, task_id=crawl_data, execution_date=20231112T135600, start_date=20231112T140625, end_date=20231112T140634
+[2023-11-12T14:06:34.474+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 154 for task crawl_data (name 'st' is not defined; 44079)
+[2023-11-12T14:06:34.558+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-11-12T14:06:34.684+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
