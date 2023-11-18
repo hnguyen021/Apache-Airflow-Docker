@@ -300,7 +300,7 @@ def email():
     try:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
-        server.login('nguyent.hung.pntv9@gmail.com', 'lxug obom chnv ywbw')
+        server.login('nguyent.hung.pntv9@gmail.com', '')
         server.sendmail('nguyent.hung.pntv9@gmail.com', 'nguyent.hung.f17@gmail.com', msg.as_string())
         server.quit()
         print("Email sent successfully!")
