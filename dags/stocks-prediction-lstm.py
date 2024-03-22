@@ -39,7 +39,6 @@ def craw_stock_price(**kwargs):
     ssl._create_default_https_context = ssl._create_unverified_context
 
     url = "https://finfo-api.vndirect.com.vn/v4/stock_prices?sort=date&q=code:{}~date:gte:{}~date:lte:{}&size=9990&page=1".format(stock_code, from_date, to_date)
-    # url = "https://github.com/thangnch/MiAI_Stock_Predict/raw/master/stock_prices.json"
     print(url)
 
 
@@ -318,7 +317,7 @@ dag = DAG(
         'retries': 1,
         'retry_delay': timedelta(minutes=5),
     },
-    description='A ML training pipline DAG',
+    description='ML training pipline DAG',
     schedule_interval=timedelta(days=1),
     start_date= datetime.today() - timedelta(days=1),
     tags=['nguyenthung'])
